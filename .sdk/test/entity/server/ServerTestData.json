@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "server": {
+      "SERVER00": {
+        "country": "s50",
+        "host": "s51",
+        "id": "SERVER00",
+        "load": 83,
+        "name": "s54",
+        "port": "s55",
+        "protocol": "s56",
+        "status": "s57"
+      },
+      "SERVER01": {
+        "country": "sa0",
+        "host": "sa1",
+        "id": "SERVER01",
+        "load": 163,
+        "name": "sa4",
+        "port": "sa5",
+        "protocol": "sa6",
+        "status": "sa7"
+      },
+      "SERVER02": {
+        "country": "sf0",
+        "host": "sf1",
+        "id": "SERVER02",
+        "load": 243,
+        "name": "sf4",
+        "port": "sf5",
+        "protocol": "sf6",
+        "status": "sf7"
+      }
+    }
+  },
+  "new": {
+    "server": {
+      "server_ref01": {
+        "country": "s140",
+        "host": "s141",
+        "load": 323,
+        "name": "s144",
+        "port": "s145",
+        "protocol": "s146",
+        "status": "s147"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "SXP VPN API",
+    "description": "The SXP VPN API provides a mobile solution for secure and private internet access. It allows users to connect to a global network, ensuring browsing privacy and security. Users can access server lists and manage their VPN connections efficiently through this API.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "SXP VPN API Documentation",
+      "url": "https://github.com/l0v3m0n3y/sxpvpn"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://adminvpn.s-xprem.com/sxpVPN/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api1.php": {
+      "get": {
+        "summary": "Get servers list",
+        "description": "Retrieves a list of available VPN servers for secure and private internet access. This endpoint provides server information that can be used to establish VPN connections globally.",
+        "operationId": "getServersList",
+        "tags": [
+          "Servers"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the list of VPN servers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "servers": {
+                      "type": "array",
+                      "description": "Array of available VPN servers",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Unique identifier for the server"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Server name or location"
+                          },
+                          "country": {
+                            "type": "string",
+                            "description": "Country where the server is located"
+                          },
+                          "host": {
+                            "type": "string",
+                            "description": "Server hostname or IP address"
+                          },
+                          "port": {
+                            "type": "integer",
+                            "description": "Connection port"
+                          },
+                          "protocol": {
+                            "type": "string",
+                            "description": "VPN protocol used"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "Server status (active, inactive, maintenance)"
+                          },
+                          "load": {
+                            "type": "number",
+                            "description": "Server load percentage"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Servers",
+      "description": "Operations related to VPN server management and retrieval"
+    }
+  ],
+  "externalDocs": {
+    "description": "Find more information and code examples on GitHub",
+    "url": "https://github.com/l0v3m0n3y/sxpvpn"
+  }
+}

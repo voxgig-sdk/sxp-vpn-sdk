@@ -1,0 +1,22 @@
+# BasicServerFlow
+
+main: kit: flow: BasicServerFlow:
+{
+  entity: "server",
+  kind: "basic",
+  name: "BasicServerFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "server_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicServerFlow"
+}

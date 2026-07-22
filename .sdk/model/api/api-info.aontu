@@ -1,0 +1,26 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        name: "SXP VPN API Documentation"
+        url: "https://github.com/l0v3m0n3y/sxpvpn"
+      }
+      description: "The SXP VPN API provides a mobile solution for secure and private internet access. It allows users to connect to a global network, ensuring browsing privacy and security. Users can access server lists and manage their VPN connections efficiently through this API."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://adminvpn.s-xprem.com/sxpVPN/api"
+        }
+      ]
+      summary: "The SXP VPN API provides a mobile solution for secure and private internet access."
+      title: "SXP VPN API"
+      version: "1.0.0"
+      website: "https://github.com/l0v3m0n3y/sxpvpn"
+    }
+  }
+}
+
