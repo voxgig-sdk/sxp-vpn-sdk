@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# SxpVpn SDK exists test
 
 import pytest
 from sxpvpn_sdk import SxpVpnSDK

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from sxpvpn_sdk.utility.voxgig_struct import voxgig_struct as vs
 from sxpvpn_sdk import SxpVpnSDK
-from core import helpers
+from sxpvpn_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _server_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "SXPVPN_TEST_SERVER_ENTID": {},
-        "SXPVPN_TEST_LIVE": "FALSE",
+        "SXP_VPN_TEST_SERVER_ENTID": {},
+        "SXP_VPN_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("SXPVPN_TEST_LIVE") == "TRUE"
+    live = env.get("SXP_VPN_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

@@ -91,6 +91,7 @@ module SxpVpnConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api1.php",
                   "parts" => [
@@ -99,7 +100,7 @@ module SxpVpnConfig
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.servers`",
                   },
                   "index$" => 0,
                 },

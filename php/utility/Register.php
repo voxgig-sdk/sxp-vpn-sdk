@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ SxpVpnUtility::setRegistrar(function (SxpVpnUtility $u): void {
     $u->prepare_params = [SxpVpnPrepareParams::class, 'call'];
     $u->prepare_path = [SxpVpnPreparePath::class, 'call'];
     $u->prepare_query = [SxpVpnPrepareQuery::class, 'call'];
+    $u->graphql_body = [SxpVpnGraphql::class, 'body'];
+    $u->graphql_errors = [SxpVpnGraphql::class, 'errors'];
     $u->result_basic = [SxpVpnResultBasic::class, 'call'];
     $u->result_body = [SxpVpnResultBody::class, 'call'];
     $u->result_headers = [SxpVpnResultHeaders::class, 'call'];

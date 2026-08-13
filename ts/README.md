@@ -35,7 +35,9 @@ const client = new SxpVpnSDK()
 
 ### 2. List server records
 
-`list()` resolves to an array of Server objects — iterate it directly:
+`list()` resolves to an array of Server ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const servers = await client.Server().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = SxpVpnSDK.test()
 
 const server = await client.Server().list()
-// server is a bare entity populated with mock response data
+// server is the entity, populated with mock response data
+// — call server.data() for the record itself
 console.log(server)
 ```
 

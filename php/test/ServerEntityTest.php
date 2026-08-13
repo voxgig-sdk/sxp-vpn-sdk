@@ -72,7 +72,7 @@ class ServerEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set SXPVPN_TEST_SERVER_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set SXP_VPN_TEST_SERVER_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -117,22 +117,22 @@ function server_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("SXPVPN_TEST_SERVER_ENTID");
+    $entid_env_raw = getenv("SXP_VPN_TEST_SERVER_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "SXPVPN_TEST_SERVER_ENTID" => $idmap,
-        "SXPVPN_TEST_LIVE" => "FALSE",
-        "SXPVPN_TEST_EXPLAIN" => "FALSE",
+        "SXP_VPN_TEST_SERVER_ENTID" => $idmap,
+        "SXP_VPN_TEST_LIVE" => "FALSE",
+        "SXP_VPN_TEST_EXPLAIN" => "FALSE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["SXPVPN_TEST_SERVER_ENTID"]);
+        $env["SXP_VPN_TEST_SERVER_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["SXPVPN_TEST_LIVE"] === "TRUE") {
+    if ($env["SXP_VPN_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
             ],
@@ -141,13 +141,13 @@ function server_basic_setup($extra)
         $client = new SxpVpnSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["SXPVPN_TEST_LIVE"] === "TRUE";
+    $live = $env["SXP_VPN_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["SXPVPN_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["SXP_VPN_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = SxpVpnSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = SxpVpnSDK.test({
+  entity: {
+    server: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const servers = await client.Server().list()
-// servers is an array of bare Server records populated with mock data
+// servers is an array of Server entities, populated with mock data
+// — call servers[0].data() for the record itself
 console.log(servers)
 ```
 
@@ -110,7 +119,7 @@ import { SxpVpnSDK } from '@voxgig-sdk/sxp-vpn'
 
 const client = new SxpVpnSDK()
 
-// List all servers (returns Server[])
+// List all servers (returns ServerEntity[] — .data() for the record)
 const servers = await client.Server().list()
 for (const server of servers) {
   console.log(server)
@@ -343,6 +352,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://github.com/l0v3m0n3y/sxpvpn](https://github.com/l0v3m0n3y/sxpvpn)
 

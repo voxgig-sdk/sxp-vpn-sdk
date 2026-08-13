@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import SxpVpnSDK
-from core.error import SxpVpnError
-from core.result import SxpVpnResult
-from core.response import SxpVpnResponse
-from core.spec import SxpVpnSpec
-from feature.base_feature import SxpVpnBaseFeature
+from projectname_sdk.core.error import SxpVpnError
+from projectname_sdk.core.result import SxpVpnResult
+from projectname_sdk.core.response import SxpVpnResponse
+from projectname_sdk.core.spec import SxpVpnSpec
+from projectname_sdk.feature.base_feature import SxpVpnBaseFeature
 
 
 def _client():

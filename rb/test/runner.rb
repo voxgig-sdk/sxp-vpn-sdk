@@ -23,8 +23,8 @@ module SxpVpnTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("SXPVPN_TEST_LIVE")
-    override = getenv("SXPVPN_TEST_OVERRIDE")
+    live = getenv("SXP_VPN_TEST_LIVE")
+    override = getenv("SXP_VPN_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module SxpVpnTestRunner
       end
     end
 
-    explain = getenv("SXPVPN_TEST_EXPLAIN")
-    m["SXPVPN_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("SXP_VPN_TEST_EXPLAIN")
+    m["SXP_VPN_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

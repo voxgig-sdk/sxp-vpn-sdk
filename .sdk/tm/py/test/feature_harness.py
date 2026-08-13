@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import SxpVpnControl
-from core.error import SxpVpnError
-from core.result import SxpVpnResult
-from core.spec import SxpVpnSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import SxpVpnControl
+from projectname_sdk.core.error import SxpVpnError
+from projectname_sdk.core.result import SxpVpnResult
+from projectname_sdk.core.spec import SxpVpnSpec
 
 
 # True when this SDK was generated with the named feature.

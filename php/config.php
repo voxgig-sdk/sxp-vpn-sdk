@@ -96,6 +96,7 @@ class SxpVpnConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api1.php',
                   'parts' => [
@@ -104,7 +105,7 @@ class SxpVpnConfig
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.servers`',
                   ],
                   'index$' => 0,
                 ],

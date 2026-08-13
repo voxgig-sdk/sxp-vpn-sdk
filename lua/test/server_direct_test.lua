@@ -61,11 +61,11 @@ function server_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["SXPVPN_TEST_SERVER_ENTID"] = {},
-    ["SXPVPN_TEST_LIVE"] = "FALSE",
+    ["SXP_VPN_TEST_SERVER_ENTID"] = {},
+    ["SXP_VPN_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["SXPVPN_TEST_LIVE"] == "TRUE"
+  local live = env["SXP_VPN_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

@@ -37,7 +37,7 @@ class ServerEntity extends SxpVpnEntityBase<Server> {
 
 
 
-  async list(this: any, reqmatch?: ServerListMatch, ctrl?: Control): Promise<Server[]> {
+  async list(this: any, reqmatch?: ServerListMatch, ctrl?: Control): Promise<ServerEntity[]> {
 
     const utility = this._utility
 
