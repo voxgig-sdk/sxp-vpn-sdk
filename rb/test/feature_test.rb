@@ -15,7 +15,7 @@ require_relative "../SxpVpn_sdk"
 module SxpVpnFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = SxpVpnConfig.make_config["feature"]
+    f = SxpVpnConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

@@ -40,7 +40,7 @@ class SxpVpnSDK
         $utility = new SxpVpnUtility();
         $this->_utility = $utility;
 
-        $config = SxpVpnConfig::make_config();
+        $config = SxpVpnConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

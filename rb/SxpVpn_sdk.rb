@@ -28,7 +28,7 @@ class SxpVpnSDK
     utility = SxpVpnUtility.new
     @_utility = utility
 
-    config = SxpVpnConfig.make_config
+    config = SxpVpnConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
