@@ -87,14 +87,14 @@ server = client.Server()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `country` | `str` | No |  |
-| `host` | `str` | No |  |
-| `id` | `str` | No |  |
-| `load` | `float` | No |  |
-| `name` | `str` | No |  |
-| `port` | `int` | No |  |
-| `protocol` | `str` | No |  |
-| `status` | `str` | No |  |
+| `country` | `str` | No | Country where the server is located |
+| `host` | `str` | No | Server hostname or IP address |
+| `id` | `str` | No | Unique identifier for the server |
+| `load` | `float` | No | Server load percentage |
+| `name` | `str` | No | Server name or location |
+| `port` | `int` | No | Connection port |
+| `protocol` | `str` | No | VPN protocol used |
+| `status` | `str` | No | Server status (active, inactive, maintenance) |
 
 ### Operations
 

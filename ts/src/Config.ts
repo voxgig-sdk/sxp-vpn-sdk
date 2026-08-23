@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'SxpVpn',
+        slug: "sxp-vpn",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,34 +67,42 @@ class Config {
       "fields": [
         {
           "name": "country",
+          "short": "Country where the server is located",
           "type": "`$STRING`"
         },
         {
           "name": "host",
+          "short": "Server hostname or IP address",
           "type": "`$STRING`"
         },
         {
           "name": "id",
+          "short": "Unique identifier for the server",
           "type": "`$STRING`"
         },
         {
           "name": "load",
+          "short": "Server load percentage",
           "type": "`$NUMBER`"
         },
         {
           "name": "name",
+          "short": "Server name or location",
           "type": "`$STRING`"
         },
         {
           "name": "port",
+          "short": "Connection port",
           "type": "`$INTEGER`"
         },
         {
           "name": "protocol",
+          "short": "VPN protocol used",
           "type": "`$STRING`"
         },
         {
           "name": "status",
+          "short": "Server status (active, inactive, maintenance)",
           "type": "`$STRING`"
         }
       ],

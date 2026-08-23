@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "SxpVpn",
+			"slug": "sxp-vpn",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,34 +36,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "country",
+						"short": "Country where the server is located",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "host",
+						"short": "Server hostname or IP address",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the server",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "load",
+						"short": "Server load percentage",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Server name or location",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "port",
+						"short": "Connection port",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "protocol",
+						"short": "VPN protocol used",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Server status (active, inactive, maintenance)",
 						"type": "`$STRING`",
 					},
 				},

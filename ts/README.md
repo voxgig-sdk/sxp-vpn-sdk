@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,14 +287,14 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `country` |  |
-| `host` |  |
-| `id` |  |
-| `load` |  |
-| `name` |  |
-| `port` |  |
-| `protocol` |  |
-| `status` |  |
+| `country` | Country where the server is located |
+| `host` | Server hostname or IP address |
+| `id` | Unique identifier for the server |
+| `load` | Server load percentage |
+| `name` | Server name or location |
+| `port` | Connection port |
+| `protocol` | VPN protocol used |
+| `status` | Server status (active, inactive, maintenance) |
 
 Operations: list.
 
@@ -319,14 +319,14 @@ Create an instance: `const server = client.Server()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `country` | `string` |  |
-| `host` | `string` |  |
-| `id` | `string` |  |
-| `load` | `number` |  |
-| `name` | `string` |  |
-| `port` | `number` |  |
-| `protocol` | `string` |  |
-| `status` | `string` |  |
+| `country` | `string` | Country where the server is located |
+| `host` | `string` | Server hostname or IP address |
+| `id` | `string` | Unique identifier for the server |
+| `load` | `number` | Server load percentage |
+| `name` | `string` | Server name or location |
+| `port` | `number` | Connection port |
+| `protocol` | `string` | VPN protocol used |
+| `status` | `string` | Server status (active, inactive, maintenance) |
 
 #### Example: List
 

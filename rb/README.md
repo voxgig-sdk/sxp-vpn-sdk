@@ -237,14 +237,14 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `country` |  |
-| `host` |  |
-| `id` |  |
-| `load` |  |
-| `name` |  |
-| `port` |  |
-| `protocol` |  |
-| `status` |  |
+| `country` | Country where the server is located |
+| `host` | Server hostname or IP address |
+| `id` | Unique identifier for the server |
+| `load` | Server load percentage |
+| `name` | Server name or location |
+| `port` | Connection port |
+| `protocol` | VPN protocol used |
+| `status` | Server status (active, inactive, maintenance) |
 
 Operations: List.
 
@@ -269,14 +269,14 @@ Create an instance: `server = client.Server`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `country` | `String` |  |
-| `host` | `String` |  |
-| `id` | `String` |  |
-| `load` | `Float` |  |
-| `name` | `String` |  |
-| `port` | `Integer` |  |
-| `protocol` | `String` |  |
-| `status` | `String` |  |
+| `country` | `String` | Country where the server is located |
+| `host` | `String` | Server hostname or IP address |
+| `id` | `String` | Unique identifier for the server |
+| `load` | `Float` | Server load percentage |
+| `name` | `String` | Server name or location |
+| `port` | `Integer` | Connection port |
+| `protocol` | `String` | VPN protocol used |
+| `status` | `String` | Server status (active, inactive, maintenance) |
 
 #### Example: List
 

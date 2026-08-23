@@ -6,7 +6,7 @@ The Golang SDK for the SxpVpn API — an entity-oriented client using standard G
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Server(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,14 +260,14 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"country"` |  |
-| `"host"` |  |
-| `"id"` |  |
-| `"load"` |  |
-| `"name"` |  |
-| `"port"` |  |
-| `"protocol"` |  |
-| `"status"` |  |
+| `"country"` | Country where the server is located |
+| `"host"` | Server hostname or IP address |
+| `"id"` | Unique identifier for the server |
+| `"load"` | Server load percentage |
+| `"name"` | Server name or location |
+| `"port"` | Connection port |
+| `"protocol"` | VPN protocol used |
+| `"status"` | Server status (active, inactive, maintenance) |
 
 Operations: List.
 
@@ -292,14 +292,14 @@ Create an instance: `server := client.Server(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `country` | `string` |  |
-| `host` | `string` |  |
-| `id` | `string` |  |
-| `load` | `float64` |  |
-| `name` | `string` |  |
-| `port` | `int` |  |
-| `protocol` | `string` |  |
-| `status` | `string` |  |
+| `country` | `string` | Country where the server is located |
+| `host` | `string` | Server hostname or IP address |
+| `id` | `string` | Unique identifier for the server |
+| `load` | `float64` | Server load percentage |
+| `name` | `string` | Server name or location |
+| `port` | `int` | Connection port |
+| `protocol` | `string` | VPN protocol used |
+| `status` | `string` | Server status (active, inactive, maintenance) |
 
 #### Example: List
 

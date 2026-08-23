@@ -231,14 +231,14 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `country` |  |
-| `host` |  |
-| `id` |  |
-| `load` |  |
-| `name` |  |
-| `port` |  |
-| `protocol` |  |
-| `status` |  |
+| `country` | Country where the server is located |
+| `host` | Server hostname or IP address |
+| `id` | Unique identifier for the server |
+| `load` | Server load percentage |
+| `name` | Server name or location |
+| `port` | Connection port |
+| `protocol` | VPN protocol used |
+| `status` | Server status (active, inactive, maintenance) |
 
 Operations: List.
 
@@ -263,14 +263,14 @@ Create an instance: `local server = client:Server(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `country` | `string` |  |
-| `host` | `string` |  |
-| `id` | `string` |  |
-| `load` | `number` |  |
-| `name` | `string` |  |
-| `port` | `number` |  |
-| `protocol` | `string` |  |
-| `status` | `string` |  |
+| `country` | `string` | Country where the server is located |
+| `host` | `string` | Server hostname or IP address |
+| `id` | `string` | Unique identifier for the server |
+| `load` | `number` | Server load percentage |
+| `name` | `string` | Server name or location |
+| `port` | `number` | Connection port |
+| `protocol` | `string` | VPN protocol used |
+| `status` | `string` | Server status (active, inactive, maintenance) |
 
 #### Example: List
 

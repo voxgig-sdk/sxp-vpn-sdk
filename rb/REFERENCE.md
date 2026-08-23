@@ -93,14 +93,14 @@ server = client.Server
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `country` | `String` | No |  |
-| `host` | `String` | No |  |
-| `id` | `String` | No |  |
-| `load` | `Float` | No |  |
-| `name` | `String` | No |  |
-| `port` | `Integer` | No |  |
-| `protocol` | `String` | No |  |
-| `status` | `String` | No |  |
+| `country` | `String` | No | Country where the server is located |
+| `host` | `String` | No | Server hostname or IP address |
+| `id` | `String` | No | Unique identifier for the server |
+| `load` | `Float` | No | Server load percentage |
+| `name` | `String` | No | Server name or location |
+| `port` | `Integer` | No | Connection port |
+| `protocol` | `String` | No | VPN protocol used |
+| `status` | `String` | No | Server status (active, inactive, maintenance) |
 
 ### Operations
 

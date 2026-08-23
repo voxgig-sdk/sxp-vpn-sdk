@@ -36,48 +36,56 @@
               "active": true,
               "name": "country",
               "req": false,
+              "short": "Country where the server is located",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "host",
               "req": false,
+              "short": "Server hostname or IP address",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the server",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "load",
               "req": false,
+              "short": "Server load percentage",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Server name or location",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "port",
               "req": false,
+              "short": "Connection port",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "protocol",
               "req": false,
+              "short": "VPN protocol used",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": false,
+              "short": "Server status (active, inactive, maintenance)",
               "type": "`$STRING`"
             }
           ],

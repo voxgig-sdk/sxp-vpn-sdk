@@ -8,41 +8,49 @@ main: kit: entity: server: {
     {
       name: "country"
       req: false
+      short: "Country where the server is located"
       type: "`$STRING`"
     }
     {
       name: "host"
       req: false
+      short: "Server hostname or IP address"
       type: "`$STRING`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the server"
       type: "`$STRING`"
     }
     {
       name: "load"
       req: false
+      short: "Server load percentage"
       type: "`$NUMBER`"
     }
     {
       name: "name"
       req: false
+      short: "Server name or location"
       type: "`$STRING`"
     }
     {
       name: "port"
       req: false
+      short: "Connection port"
       type: "`$INTEGER`"
     }
     {
       name: "protocol"
       req: false
+      short: "VPN protocol used"
       type: "`$STRING`"
     }
     {
       name: "status"
       req: false
+      short: "Server status (active, inactive, maintenance)"
       type: "`$STRING`"
     }
   ]

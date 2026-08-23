@@ -243,14 +243,14 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `country` |  |
-| `host` |  |
-| `id` |  |
-| `load` |  |
-| `name` |  |
-| `port` |  |
-| `protocol` |  |
-| `status` |  |
+| `country` | Country where the server is located |
+| `host` | Server hostname or IP address |
+| `id` | Unique identifier for the server |
+| `load` | Server load percentage |
+| `name` | Server name or location |
+| `port` | Connection port |
+| `protocol` | VPN protocol used |
+| `status` | Server status (active, inactive, maintenance) |
 
 Operations: List.
 
@@ -275,14 +275,14 @@ Create an instance: `server = client.Server()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `country` | `str` |  |
-| `host` | `str` |  |
-| `id` | `str` |  |
-| `load` | `float` |  |
-| `name` | `str` |  |
-| `port` | `int` |  |
-| `protocol` | `str` |  |
-| `status` | `str` |  |
+| `country` | `str` | Country where the server is located |
+| `host` | `str` | Server hostname or IP address |
+| `id` | `str` | Unique identifier for the server |
+| `load` | `float` | Server load percentage |
+| `name` | `str` | Server name or location |
+| `port` | `int` | Connection port |
+| `protocol` | `str` | VPN protocol used |
+| `status` | `str` | Server status (active, inactive, maintenance) |
 
 #### Example: List
 

@@ -98,14 +98,14 @@ fmt.Println(server.GetName()) // "server"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `country` | `string` | No |  |
-| `host` | `string` | No |  |
-| `id` | `string` | No |  |
-| `load` | `float64` | No |  |
-| `name` | `string` | No |  |
-| `port` | `int` | No |  |
-| `protocol` | `string` | No |  |
-| `status` | `string` | No |  |
+| `country` | `string` | No | Country where the server is located |
+| `host` | `string` | No | Server hostname or IP address |
+| `id` | `string` | No | Unique identifier for the server |
+| `load` | `float64` | No | Server load percentage |
+| `name` | `string` | No | Server name or location |
+| `port` | `int` | No | Connection port |
+| `protocol` | `string` | No | VPN protocol used |
+| `status` | `string` | No | Server status (active, inactive, maintenance) |
 
 ### Operations
 

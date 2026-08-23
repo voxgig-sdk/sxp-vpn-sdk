@@ -116,14 +116,14 @@ const server = client.Server()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `country` | `string` | No |  |
-| `host` | `string` | No |  |
-| `id` | `string` | No |  |
-| `load` | `number` | No |  |
-| `name` | `string` | No |  |
-| `port` | `number` | No |  |
-| `protocol` | `string` | No |  |
-| `status` | `string` | No |  |
+| `country` | `string` | No | Country where the server is located |
+| `host` | `string` | No | Server hostname or IP address |
+| `id` | `string` | No | Unique identifier for the server |
+| `load` | `number` | No | Server load percentage |
+| `name` | `string` | No | Server name or location |
+| `port` | `number` | No | Connection port |
+| `protocol` | `string` | No | VPN protocol used |
+| `status` | `string` | No | Server status (active, inactive, maintenance) |
 
 ### Operations
 
