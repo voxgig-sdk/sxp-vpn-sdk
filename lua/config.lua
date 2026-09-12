@@ -72,6 +72,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "server",
         ["op"] = {
           ["list"] = {
@@ -83,13 +87,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api1.php",
-                ["parts"] = {
-                  "api1.php",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api1.php",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.servers`",
+                },
+                ["parts"] = {
+                  "api1.php",
                 },
               },
             },

@@ -68,8 +68,10 @@ main: kit: entity: server: {
         {
           method: "GET"
           orig: "/api1.php"
-          parts: [
-            "api1.php"
+          segments: [
+            {
+              lit: "api1.php"
+            }
           ]
           transform: {
             req: "`reqdata`"

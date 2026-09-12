@@ -84,6 +84,10 @@ module SxpVpnConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "server",
           "op" => {
             "list" => {
@@ -95,14 +99,19 @@ module SxpVpnConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api1.php",
-                  "parts" => [
-                    "api1.php",
+                  "segments" => [
+                    {
+                      "lit" => "api1.php",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body.servers`",
                   },
+                  "parts" => [
+                    "api1.php",
+                  ],
                 },
               ],
             },
