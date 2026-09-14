@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { SxpVpnSDK } from '@voxgig-sdk/sxp-vpn'
+import { SxpVpnSDK } from '@voxgig-sdk/sxp-vpn-sdk'
 
 const client = new SxpVpnSDK()
 ```
@@ -417,7 +417,7 @@ sxp-vpn/
 Import the SDK from the package root:
 
 ```ts
-import { SxpVpnSDK } from '@voxgig-sdk/sxp-vpn'
+import { SxpVpnSDK } from '@voxgig-sdk/sxp-vpn-sdk'
 ```
 
 ### Entity state

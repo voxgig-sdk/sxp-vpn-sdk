@@ -105,7 +105,7 @@ local results, err = client:Server():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/sxp-vpn` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sxp-vpn-sdk/releases) |
+| TypeScript | `@voxgig-sdk/sxp-vpn-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sxp-vpn-sdk/releases) |
 | Python | `voxgig-sdk-sxp-vpn` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sxp-vpn-sdk/releases) |
 | PHP | `voxgig-sdk/sxp-vpn` | publish pending — [install from git tag](https://github.com/voxgig-sdk/sxp-vpn-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/sxp-vpn-sdk/go` | `go get github.com/voxgig-sdk/sxp-vpn-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Server():list()
 ### TypeScript
 
 ```ts
-import { SxpVpnSDK } from '@voxgig-sdk/sxp-vpn'
+import { SxpVpnSDK } from '@voxgig-sdk/sxp-vpn-sdk'
 
 const client = new SxpVpnSDK()
 
