@@ -4,7 +4,10 @@ declare(strict_types=1);
 // SxpVpn SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class SxpVpnFeatures
@@ -14,8 +17,14 @@ class SxpVpnFeatures
         switch ($name) {
             case "base":
                 return new SxpVpnBaseFeature();
+            case "ratelimit":
+                return new SxpVpnRatelimitFeature();
+            case "retry":
+                return new SxpVpnRetryFeature();
             case "test":
                 return new SxpVpnTestFeature();
+            case "timeout":
+                return new SxpVpnTimeoutFeature();
             default:
                 return new SxpVpnBaseFeature();
         }
@@ -31,7 +40,10 @@ class SxpVpnFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

@@ -7,7 +7,7 @@
         "id": "SERVER00",
         "load": 83,
         "name": "s54",
-        "port": "s55",
+        "port": 85,
         "protocol": "s56",
         "status": "s57"
       },
@@ -17,7 +17,7 @@
         "id": "SERVER01",
         "load": 163,
         "name": "sa4",
-        "port": "sa5",
+        "port": 165,
         "protocol": "sa6",
         "status": "sa7"
       },
@@ -27,7 +27,7 @@
         "id": "SERVER02",
         "load": 243,
         "name": "sf4",
-        "port": "sf5",
+        "port": 245,
         "protocol": "sf6",
         "status": "sf7"
       }
@@ -40,9 +40,107 @@
         "host": "s141",
         "load": 323,
         "name": "s144",
-        "port": "s145",
+        "port": 325,
         "protocol": "s146",
         "status": "s147"
+      }
+    }
+  },
+  "requests": {
+    "GET /api1.php": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getServersList",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "servers": {
+                      "description": "Array of available VPN servers",
+                      "items": {
+                        "properties": {
+                          "country": {
+                            "description": "Country where the server is located",
+                            "type": "string"
+                          },
+                          "host": {
+                            "description": "Server hostname or IP address",
+                            "type": "string"
+                          },
+                          "id": {
+                            "description": "Unique identifier for the server",
+                            "type": "string"
+                          },
+                          "load": {
+                            "description": "Server load percentage",
+                            "type": "number"
+                          },
+                          "name": {
+                            "description": "Server name or location",
+                            "type": "string"
+                          },
+                          "port": {
+                            "description": "Connection port",
+                            "type": "integer"
+                          },
+                          "protocol": {
+                            "description": "VPN protocol used",
+                            "type": "string"
+                          },
+                          "status": {
+                            "description": "Server status (active, inactive, maintenance)",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successfully retrieved the list of VPN servers"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Service unavailable"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }
