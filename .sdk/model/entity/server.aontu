@@ -1,0 +1,100 @@
+# Entity: server
+
+main: kit: entity: server: {
+
+  alias: field: {}
+
+  fields: {
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      sh: "Country where the server is located"
+      t: "`$STRING`"
+    }
+    host: {
+      h: "Host"
+      n: "host"
+      r: false
+      sh: "Server hostname or IP address"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the server"
+      t: "`$STRING`"
+    }
+    load: {
+      h: "Load"
+      n: "load"
+      r: false
+      sh: "Server load percentage"
+      t: "`$NUMBER`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Server name or location"
+      t: "`$STRING`"
+    }
+    port: {
+      h: "Port"
+      n: "port"
+      r: false
+      sh: "Connection port"
+      t: "`$INTEGER`"
+    }
+    protocol: {
+      h: "Protocol"
+      n: "protocol"
+      r: false
+      sh: "VPN protocol used"
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "Server status (active, inactive, maintenance)"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "server"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api1.php"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/api1.php"
+          s: [
+            {
+              lit: "api1.php"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.servers`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

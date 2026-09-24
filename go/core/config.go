@@ -91,43 +91,51 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "country",
-						"short": "Country where the server is located",
+						"title": "Country",
 						"type": "`$STRING`",
+						"short": "Country where the server is located",
 					},
 					map[string]any{
 						"name": "host",
-						"short": "Server hostname or IP address",
+						"title": "Host",
 						"type": "`$STRING`",
+						"short": "Server hostname or IP address",
 					},
 					map[string]any{
 						"name": "id",
-						"short": "Unique identifier for the server",
+						"title": "Id",
 						"type": "`$STRING`",
+						"short": "Unique identifier for the server",
 					},
 					map[string]any{
 						"name": "load",
-						"short": "Server load percentage",
+						"title": "Load",
 						"type": "`$NUMBER`",
+						"short": "Server load percentage",
 					},
 					map[string]any{
 						"name": "name",
-						"short": "Server name or location",
+						"title": "Name",
 						"type": "`$STRING`",
+						"short": "Server name or location",
 					},
 					map[string]any{
 						"name": "port",
-						"short": "Connection port",
+						"title": "Port",
 						"type": "`$INTEGER`",
+						"short": "Connection port",
 					},
 					map[string]any{
 						"name": "protocol",
-						"short": "VPN protocol used",
+						"title": "Protocol",
 						"type": "`$STRING`",
+						"short": "VPN protocol used",
 					},
 					map[string]any{
 						"name": "status",
-						"short": "Server status (active, inactive, maintenance)",
+						"title": "Status",
 						"type": "`$STRING`",
+						"short": "Server status (active, inactive, maintenance)",
 					},
 				},
 				"id": map[string]any{
@@ -141,7 +149,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api1.php",
@@ -150,14 +157,16 @@ func MakeConfig() map[string]any {
 										"lit": "api1.php",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"api1.php",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.servers`",
 								},
-								"parts": []any{
-									"api1.php",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

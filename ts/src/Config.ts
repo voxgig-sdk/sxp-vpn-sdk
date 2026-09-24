@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -139,43 +132,51 @@ class Config {
       "fields": [
         {
           "name": "country",
-          "short": "Country where the server is located",
-          "type": "`$STRING`"
+          "title": "Country",
+          "type": "`$STRING`",
+          "short": "Country where the server is located"
         },
         {
           "name": "host",
-          "short": "Server hostname or IP address",
-          "type": "`$STRING`"
+          "title": "Host",
+          "type": "`$STRING`",
+          "short": "Server hostname or IP address"
         },
         {
           "name": "id",
-          "short": "Unique identifier for the server",
-          "type": "`$STRING`"
+          "title": "Id",
+          "type": "`$STRING`",
+          "short": "Unique identifier for the server"
         },
         {
           "name": "load",
-          "short": "Server load percentage",
-          "type": "`$NUMBER`"
+          "title": "Load",
+          "type": "`$NUMBER`",
+          "short": "Server load percentage"
         },
         {
           "name": "name",
-          "short": "Server name or location",
-          "type": "`$STRING`"
+          "title": "Name",
+          "type": "`$STRING`",
+          "short": "Server name or location"
         },
         {
           "name": "port",
-          "short": "Connection port",
-          "type": "`$INTEGER`"
+          "title": "Port",
+          "type": "`$INTEGER`",
+          "short": "Connection port"
         },
         {
           "name": "protocol",
-          "short": "VPN protocol used",
-          "type": "`$STRING`"
+          "title": "Protocol",
+          "type": "`$STRING`",
+          "short": "VPN protocol used"
         },
         {
           "name": "status",
-          "short": "Server status (active, inactive, maintenance)",
-          "type": "`$STRING`"
+          "title": "Status",
+          "type": "`$STRING`",
+          "short": "Server status (active, inactive, maintenance)"
         }
       ],
       "id": {
@@ -189,7 +190,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/api1.php",
@@ -198,14 +198,16 @@ class Config {
                   "lit": "api1.php"
                 }
               ],
-              "select": {},
+              "parts": [
+                "api1.php"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.servers`"
               },
-              "parts": [
-                "api1.php"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }

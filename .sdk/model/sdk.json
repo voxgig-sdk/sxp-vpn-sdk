@@ -24,70 +24,144 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "server": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "country",
-              "req": false,
-              "short": "Country where the server is located",
-              "type": "`$STRING`"
+          "fields": {
+            "country": {
+              "a": true,
+              "h": "Country",
+              "n": "country",
+              "r": false,
+              "sh": "Country where the server is located",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "host",
-              "req": false,
-              "short": "Server hostname or IP address",
-              "type": "`$STRING`"
+            "host": {
+              "a": true,
+              "h": "Host",
+              "n": "host",
+              "r": false,
+              "sh": "Server hostname or IP address",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the server",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the server",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "load",
-              "req": false,
-              "short": "Server load percentage",
-              "type": "`$NUMBER`"
+            "load": {
+              "a": true,
+              "h": "Load",
+              "n": "load",
+              "r": false,
+              "sh": "Server load percentage",
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "short": "Server name or location",
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "sh": "Server name or location",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "port",
-              "req": false,
-              "short": "Connection port",
-              "type": "`$INTEGER`"
+            "port": {
+              "a": true,
+              "h": "Port",
+              "n": "port",
+              "r": false,
+              "sh": "Connection port",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "protocol",
-              "req": false,
-              "short": "VPN protocol used",
-              "type": "`$STRING`"
+            "protocol": {
+              "a": true,
+              "h": "Protocol",
+              "n": "protocol",
+              "r": false,
+              "sh": "VPN protocol used",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "status",
-              "req": false,
-              "short": "Server status (active, inactive, maintenance)",
-              "type": "`$STRING`"
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": false,
+              "sh": "Server status (active, inactive, maintenance)",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -99,24 +173,24 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /api1.php",
-                    "json": "{\"operationId\":\"getServersList\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"servers\":{\"description\":\"Array of available VPN servers\",\"items\":{\"properties\":{\"country\":{\"description\":\"Country where the server is located\",\"type\":\"string\"},\"host\":{\"description\":\"Server hostname or IP address\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the server\",\"type\":\"string\"},\"load\":{\"description\":\"Server load percentage\",\"type\":\"number\"},\"name\":{\"description\":\"Server name or location\",\"type\":\"string\"},\"port\":{\"description\":\"Connection port\",\"type\":\"integer\"},\"protocol\":{\"description\":\"VPN protocol used\",\"type\":\"string\"},\"status\":{\"description\":\"Server status (active, inactive, maintenance)\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successfully retrieved the list of VPN servers\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"},\"503\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Service unavailable\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api1.php",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api1.php",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "api1.php"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.servers`"
                   }
@@ -545,13 +619,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {

@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ServerEntity = void 0;
 const SxpVpnEntityBase_1 = require("../SxpVpnEntityBase");
-// TODO: needs Entity superclass
 class ServerEntity extends SxpVpnEntityBase_1.SxpVpnEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

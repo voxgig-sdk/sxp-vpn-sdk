@@ -43,7 +43,7 @@ local servers, err = client:Server():list()
 if err then error(err) end
 
 for _, item in ipairs(servers) do
-  print(item["id"], item["country"])
+  print(item["id"])
 end
 ```
 

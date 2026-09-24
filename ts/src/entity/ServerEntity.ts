@@ -19,7 +19,6 @@ import type {
   ServerListMatch,
 } from '../SxpVpnTypes'
 
-// TODO: needs Entity superclass
 class ServerEntity extends SxpVpnEntityBase<Server> {
 
   constructor(client: SxpVpnSDK, entopts: any) {

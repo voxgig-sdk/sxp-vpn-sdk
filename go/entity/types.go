@@ -1,7 +1,7 @@
 // Typed models for the SxpVpn SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,14 +14,6 @@ import (
 
 // Server is the typed data model for the server entity.
 type Server struct {
-	Country *string `json:"country,omitempty"`
-	Host *string `json:"host,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Load *float64 `json:"load,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Port *int `json:"port,omitempty"`
-	Protocol *string `json:"protocol,omitempty"`
-	Status *string `json:"status,omitempty"`
 }
 
 // ServerListMatch is the typed request payload for Server.ListTyped.

@@ -87,43 +87,51 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "country",
-            ["short"] = "Country where the server is located",
+            ["title"] = "Country",
             ["type"] = "`$STRING`",
+            ["short"] = "Country where the server is located",
           },
           {
             ["name"] = "host",
-            ["short"] = "Server hostname or IP address",
+            ["title"] = "Host",
             ["type"] = "`$STRING`",
+            ["short"] = "Server hostname or IP address",
           },
           {
             ["name"] = "id",
-            ["short"] = "Unique identifier for the server",
+            ["title"] = "Id",
             ["type"] = "`$STRING`",
+            ["short"] = "Unique identifier for the server",
           },
           {
             ["name"] = "load",
-            ["short"] = "Server load percentage",
+            ["title"] = "Load",
             ["type"] = "`$NUMBER`",
+            ["short"] = "Server load percentage",
           },
           {
             ["name"] = "name",
-            ["short"] = "Server name or location",
+            ["title"] = "Name",
             ["type"] = "`$STRING`",
+            ["short"] = "Server name or location",
           },
           {
             ["name"] = "port",
-            ["short"] = "Connection port",
+            ["title"] = "Port",
             ["type"] = "`$INTEGER`",
+            ["short"] = "Connection port",
           },
           {
             ["name"] = "protocol",
-            ["short"] = "VPN protocol used",
+            ["title"] = "Protocol",
             ["type"] = "`$STRING`",
+            ["short"] = "VPN protocol used",
           },
           {
             ["name"] = "status",
-            ["short"] = "Server status (active, inactive, maintenance)",
+            ["title"] = "Status",
             ["type"] = "`$STRING`",
+            ["short"] = "Server status (active, inactive, maintenance)",
           },
         },
         ["id"] = {
@@ -137,7 +145,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api1.php",
@@ -146,14 +153,16 @@ local function make_config()
                     ["lit"] = "api1.php",
                   },
                 },
-                ["select"] = {},
+                ["parts"] = {
+                  "api1.php",
+                },
+                ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.servers`",
                 },
-                ["parts"] = {
-                  "api1.php",
-                },
+                ["args"] = {},
+                ["select"] = {},
               },
             },
           },
