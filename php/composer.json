@@ -1,5 +1,5 @@
 {
-  "name": "voxgig-sdk/sxp-vpn",
+  "name": "voxgig-sdk/sxp-vpn-sdk",
   "description": "Unofficial generated PHP SDK for the SXP VPN public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
   "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "sxp-vpn"],
