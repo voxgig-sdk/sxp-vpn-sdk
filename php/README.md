@@ -12,9 +12,14 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `$
 
 ## Install
 This package is not yet published to Packagist. Install it from the
-GitHub release tag (`php/vX.Y.Z`):
+GitHub release tag (`php/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/sxp-vpn-sdk/releases)), or
+from a clone as a Composer path repository:
 
-- Releases: [https://github.com/voxgig-sdk/sxp-vpn-sdk/releases](https://github.com/voxgig-sdk/sxp-vpn-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/sxp-vpn-sdk
+composer config repositories.sxp-vpn-sdk path ./sxp-vpn-sdk/php
+composer require voxgig-sdk/sxp-vpn-sdk:@dev
+```
 
 
 ## Tutorial: your first API call

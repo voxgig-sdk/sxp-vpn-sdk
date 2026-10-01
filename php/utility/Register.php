@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 SxpVpnUtility::setRegistrar(function (SxpVpnUtility $u): void {
     $u->clean = [SxpVpnClean::class, 'call'];
+    $u->clean_add = [SxpVpnClean::class, 'add'];
+    $u->clean_explain = [SxpVpnDone::class, 'clean_explain'];
     $u->done = [SxpVpnDone::class, 'call'];
     $u->make_error = [SxpVpnMakeError::class, 'call'];
     $u->feature_add = [SxpVpnFeatureAdd::class, 'call'];

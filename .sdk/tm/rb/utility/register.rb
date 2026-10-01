@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 SxpVpnUtility.registrar = ->(u) {
   u.clean = SxpVpnUtilities::Clean
+  u.clean_add = SxpVpnUtilities::CleanAdd
+  u.clean_explain = SxpVpnUtilities::CleanExplain
   u.done = SxpVpnUtilities::Done
   u.make_error = SxpVpnUtilities::MakeError
   u.feature_add = SxpVpnUtilities::FeatureAdd

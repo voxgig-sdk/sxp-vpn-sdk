@@ -1,6 +1,9 @@
 package entity
 
 import (
+	"encoding/json"
+	"fmt"
+
 	"github.com/voxgig-sdk/sxp-vpn-sdk/go/core"
 
 	vs "github.com/voxgig-sdk/sxp-vpn-sdk/go/utility/struct"
@@ -49,6 +52,26 @@ func NewServerEntity(client *core.SxpVpnSDK, entopts map[string]any) *ServerEnti
 }
 
 func (e *ServerEntity) GetName() string { return e.name }
+
+// An entity prints and serialises as its data, as ts's toString and toJSON
+// do: the match state can carry a query credential, and the client holds
+// the options.
+func (e *ServerEntity) String() string {
+	return "Server " + vs.Jsonify(e.data, map[string]any{"indent": 0})
+}
+
+func (e *ServerEntity) GoString() string {
+	return e.String()
+}
+
+func (e *ServerEntity) MarshalJSON() ([]byte, error) {
+	out := map[string]any{}
+	for k, v := range e.data {
+		out[k] = v
+	}
+	out["voxgig$entity"] = "Server"
+	return json.Marshal(out)
+}
 
 func (e *ServerEntity) MarkDeleted() {
 	e.deleted = true
@@ -173,6 +196,15 @@ func (e *ServerEntity) Stream(action string, args map[string]any, callopts map[s
 	go func() {
 		defer close(out)
 
+		// With no error channel, a panicking hook or stream function ends the
+		// stream as runOp's error would. A goroutine the stream function
+		// starts is out of reach of this recover.
+		defer func() {
+			if r := recover(); r != nil {
+				e.recovered(ctx, r)
+			}
+		}()
+
 		utility.FeatureHook(ctx, "PrePoint")
 		point, err := utility.MakePoint(ctx)
 		ctx.Out["point"] = point
@@ -213,6 +245,8 @@ func (e *ServerEntity) Stream(action string, args map[string]any, callopts map[s
 		// Inbound: prefer the streaming feature's incremental iterator; else
 		// fall back to the materialised items so Stream always yields.
 		if ctx.Result != nil && ctx.Result.Stream != nil {
+			// Done does not run on this path, so its record is cleaned here.
+			utility.CleanExplain(ctx)
 			for item := range ctx.Result.Stream() {
 				if !send(item) {
 					return
@@ -295,8 +329,14 @@ func (e *ServerEntity) Remove(_ map[string]any, _ map[string]any) (any, error) {
 }
 
 
-func (e *ServerEntity) runOp(ctx *core.Context, postDone func()) (any, error) {
+func (e *ServerEntity) runOp(ctx *core.Context, postDone func()) (out any, err error) {
 	utility := e.utility
+
+	defer func() {
+		if r := recover(); r != nil {
+			out, err = e.recovered(ctx, r)
+		}
+	}()
 
 	utility.FeatureHook(ctx, "PrePoint")
 	point, err := utility.MakePoint(ctx)
@@ -336,9 +376,9 @@ func (e *ServerEntity) runOp(ctx *core.Context, postDone func()) (any, error) {
 	utility.FeatureHook(ctx, "PreDone")
 	postDone()
 
-	out, doneErr := utility.Done(ctx)
-	if doneErr != nil {
-		return out, doneErr
+	out, err = utility.Done(ctx)
+	if err != nil {
+		return out, err
 	}
 
 	opname := ""
@@ -354,4 +394,14 @@ func (e *ServerEntity) runOp(ctx *core.Context, postDone func()) (any, error) {
 	}
 
 	return out, nil
+}
+
+// A hook, fetcher or parser that panics never reached MakeError, and its
+// message can quote the request.
+func (e *ServerEntity) recovered(ctx *core.Context, r any) (any, error) {
+	perr, ok := r.(error)
+	if !ok {
+		perr = fmt.Errorf("%v", r)
+	}
+	return e.utility.MakeError(ctx, perr)
 }
