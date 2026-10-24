@@ -79,6 +79,7 @@ module SxpVpnConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -175,6 +176,10 @@ module SxpVpnConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },

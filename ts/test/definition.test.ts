@@ -17,20 +17,25 @@ const PLAN: any[] = [
     "args": [],
     "select": {},
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [],
+    "queryArgs": [],
     "auth": null,
     "status": 200,
     "sample": {
       "servers": [
         {
+          "id": "x",
+          "name": "x",
           "country": "x",
           "host": "x",
-          "id": "x",
-          "load": 1,
-          "name": "x",
           "port": 1,
           "protocol": "x",
-          "status": "x"
+          "status": "x",
+          "load": 1
         }
       ]
     },

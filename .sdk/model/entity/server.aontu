@@ -81,6 +81,10 @@ main: kit: entity: server: {
           }
           m: "GET"
           o: "/api1.php"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "api1.php"

@@ -12,7 +12,7 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `c
 
 ## Install
 This package is not yet published to RubyGems. Install it from the
-GitHub release tag (`rb/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/sxp-vpn-sdk/releases)), or
+GitHub release tag (`rb/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/sxp-vpn-sdk/tags)), or
 from a clone:
 
 ```bash
@@ -43,10 +43,11 @@ client = SxpVpnSDK.new
 
 ```ruby
 begin
-  # list returns an Array of Server records — iterate directly.
+  # list returns an Array of Server entities, one per record; data_get reads the record.
   servers = client.Server.list
   servers.each do |item|
-    puts "#{item["id"]} #{item["country"]}"
+    record = item.data_get
+    puts "#{record["id"]} #{record["country"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -128,10 +129,10 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = SxpVpnSDK.test
 
-# Entity ops return the ENTITY (raises on error);
-# call data_get for the mock record.
-server = client.Server.list()
-puts server
+# list returns an Array of Server entities, one per mock record (raises on
+# error); data_get reads each record.
+servers = client.Server.list()
+servers.each { |item| puts item.data_get }
 ```
 
 ### Use a custom fetch function
@@ -215,7 +216,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all). Raises on error. |
+| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all), one per record. Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -225,9 +226,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the result data directly. On failure they
-raise a `SxpVpnError` (a `StandardError` subclass), so wrap
-calls in `begin`/`rescue` where you need to handle errors.
+Entity operations return the entity, and `list` an `Array` of entities, one
+per record; an entity's `data_get` reads its record. On failure they raise a
+`SxpVpnError` (a `StandardError` subclass), so wrap calls in
+`begin`/`rescue` where you need to handle errors.
 
 The `direct` escape hatch is the exception: it never raises and instead
 returns a result `Hash` with these keys:
@@ -290,8 +292,9 @@ Create an instance: `server = client.Server`
 #### Example: List
 
 ```ruby
-# list returns an Array of Server records (raises on error).
+# list returns an Array of Server entities, one per record (raises on error).
 servers = client.Server.list
+servers.each { |item| puts item.data_get }
 ```
 
 ## Features
